@@ -36,7 +36,7 @@ function parseRssFeeds(raw) {
 }
 
 const config = Object.freeze({
-  anthropicApiKey:    required('ANTHROPIC_API_KEY'),
+  anthropicApiKey:    required('ANTHROPIC_API_KEY').replace(/\s/g, ''),
   gmailUser:          required('GMAIL_USER'),
   gmailAppPassword:   required('GMAIL_APP_PASSWORD').replace(/\s/g, ''),
   emailFrom:          required('EMAIL_FROM'),
