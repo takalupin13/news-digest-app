@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+    "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- ユニークなラベル（reverse-DNS形式） -->
+    <key>Label</key>
+    <string>com.user.newsdaily</string>
+
+    <!-- 実行コマンド: フルパスで指定（launchdはPATHを引き継がない） -->
+    <key>ProgramArguments</key>
+    <array>
+        <string>/opt/homebrew/bin/node</string>
+        <string>/Users/shimomototakamichi/Desktop/test2/src/index.js</string>
+    </array>
+
+    <!-- 作業ディレクトリ: dotenvが.envを探す基準になる（必須） -->
+    <key>WorkingDirectory</key>
+    <string>/Users/shimomototakamichi/Desktop/test2</string>
+
+    <!-- 毎朝7時00分に実行（Weekday省略 = 毎日） -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>7</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <!-- 標準出力ログ -->
+    <key>StandardOutPath</key>
+    <string>/Users/shimomototakamichi/Desktop/test2/logs/stdout.log</string>
+
+    <!-- エラーログ -->
+    <key>StandardErrorPath</key>
+    <string>/Users/shimomototakamichi/Desktop/test2/logs/stderr.log</string>
+
+    <!-- ロード時に即時実行しない（時刻になるまで待つ） -->
+    <key>RunAtLoad</key>
+    <false/>
+
+    <!-- 失敗時のリトライ抑制（1時間に1回まで） -->
+    <key>ThrottleInterval</key>
+    <integer>3600</integer>
+</dict>
+</plist>

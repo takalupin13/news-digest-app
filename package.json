@@ -1,0 +1,25 @@
+{
+  "name": "news-daily",
+  "version": "1.0.0",
+  "description": "Daily Japanese news digest via Claude API",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "chat": "node src/server.js",
+    "test:fetch": "node -e \"require('./src/fetcher').fetchAll(require('./src/config')).then(r => console.log(JSON.stringify(r, null, 2)))\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.82.0",
+    "@supabase/supabase-js": "^2.101.1",
+    "better-sqlite3": "^12.8.0",
+    "cheerio": "^1.2.0",
+    "dotenv": "^17.4.0",
+    "express": "^5.2.1",
+    "nodemailer": "^8.0.4",
+    "rss-parser": "^3.13.0"
+  }
+}
